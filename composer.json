@@ -2,15 +2,10 @@
     "name": "mattybaer/ebay-sdk-php",
     "description": "An eBay SDK for PHP. Use the eBay API in your PHP projects.",
     "keywords": ["ebay", "api", "sdk"],
-    "homepage": "http://devbay.net/",
+    "homepage": "https://www.bibliopolis.com/",
     "type": "library",
     "license": "(Apache-2.0 and MIT)",
     "authors": [
-        {
-            "name": "David T. Sadler",
-            "email": "davidtsadler@googlemail.com",
-            "homepage": "http://davidtsadler.com"
-        },
         {
             "name": "Matthew Baer",
             "email": "mbaer@bibliopolis.com",
