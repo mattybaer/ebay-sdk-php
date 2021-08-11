@@ -27,14 +27,32 @@ class GetPublicKeyRestResponse extends \DTS\eBaySDK\Types\BaseType
      * @var array Properties belonging to objects of this class.
      */
     private static $propertyTypes = [
+    	'key' => [
+		'type' => 'string',
+		'repeatable' => false,
+		'attribute' => false,
+		'elementName' => 'key'
+	],
+	'algorithm' => [
+		'type' => 'string',
+		'repeatable' => false,
+		'attribute' => false,
+		'elementName' => 'algorithm'
+	],
+	'digest' => [
+		'type' => 'string',
+		'repeatable' => false,
+		'attribute' => false,
+		'elementName' => 'digest'
+	],
         'errors' => [
-            'type' => 'DTS\eBaySDK\Compliance\Types\ErrorDetailV3',
+            'type' => 'DTS\eBaySDK\Notification\Types\ErrorDetailV3',
             'repeatable' => true,
             'attribute' => false,
             'elementName' => 'errors'
         ],
         'warnings' => [
-            'type' => 'DTS\eBaySDK\Compliance\Types\ErrorDetailV3',
+            'type' => 'DTS\eBaySDK\Notification\Types\ErrorDetailV3',
             'repeatable' => true,
             'attribute' => false,
             'elementName' => 'warnings'
