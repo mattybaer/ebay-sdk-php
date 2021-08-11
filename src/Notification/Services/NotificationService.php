@@ -10,7 +10,7 @@
 
 namespace DTS\eBaySDK\Notification\Services;
 
-class NotificationService extends \DTS\eBaySDK\Compliance\Services\NotificationBaseService
+class NotificationService extends \DTS\eBaySDK\Notification\Services\NotificationBaseService
 {
     const API_VERSION = 'v1';
 
@@ -21,7 +21,7 @@ class NotificationService extends \DTS\eBaySDK\Compliance\Services\NotificationB
         'GetPublicKey' => [
 		'method' => 'GET',
 		'resource' => 'public_key/{public_key_id}',
-		'responseClass' => '\DTS\eBaySDK\Taxonomy\Types\GetPublicKeyRestResponse',
+		'responseClass' => '\DTS\eBaySDK\Notification\Types\GetPublicKeyRestResponse',
 		'params' => [
 			'public_key_id' => [
 				'valid' => ['string'],

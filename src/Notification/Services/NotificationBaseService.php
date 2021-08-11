@@ -39,7 +39,7 @@ class NotificationBaseService extends \DTS\eBaySDK\Services\BaseRestService
         return $definitions + [
             'apiVersion' => [
                 'valid' => ['string'],
-                'default' => \DTS\eBaySDK\Compliance\Services\NotificationService::API_VERSION,
+                'default' => \DTS\eBaySDK\Notification\Services\NotificationService::API_VERSION,
                 'required' => true
             ],
             'authorization' => [
