@@ -1,8 +1,8 @@
 {
-    "name": "dts/ebay-sdk-php",
-    "description": "An eBay SDK for PHP. Use the eBay API in your PHP projects.",
+    "name": "mattybaer/ebay-sdk-php",
+    "description": "An eBay SDK for PHP with support for PHP 8. Maintained by Bibliopolis.",
     "keywords": ["ebay", "api", "sdk"],
-    "homepage": "http://devbay.net/",
+    "homepage": "https://www.bibliopolis.com/",
     "type": "library",
     "license": "(Apache-2.0 and MIT)",
     "authors": [
@@ -10,15 +10,22 @@
             "name": "David T. Sadler",
             "email": "davidtsadler@googlemail.com",
             "homepage": "http://davidtsadler.com"
+        },
+        {
+            "name": "Matthew Baer",
+            "email": "mbaer@bibliopolis.com",
+            "homepage": "http://www.bibliopolis.com"
         }
     ],
     "support": {
-        "issues": "https://github.com/davidtsadler/ebay-sdk-php/issues"
+        "issues": "https://github.com/mattybaer/ebay-sdk-php/issues"
     },
     "require": {
-        "php": ">=5.5",
-        "guzzlehttp/guzzle": "~6.0",
-        "guzzlehttp/psr7": "~1.0",
+        "php-64bit": "^7.2 || ^8.0",
+        "ext-curl": "*",
+        "ext-libxml": "*",
+        "guzzlehttp/guzzle": "^6.0 || ^7.0",
+        "guzzlehttp/psr7": "^1.7 || ^2.0",
         "guzzlehttp/promises": "^1.1"
     },
     "require-dev": {

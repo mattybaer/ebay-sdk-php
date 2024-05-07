@@ -185,11 +185,11 @@ class OAuthService
             'redirect_uri'  => $this->getConfig('ruName'),
             'response_type' => 'code',
             'state'         => $params['state'],
-            'scope'         => implode($params['scope'], ' ')
+            'scope'         => implode(' ', $params['scope'])
 
         ];
 
-        return $url.http_build_query($urlParams, null, '&', PHP_QUERY_RFC3986);
+        return $url.http_build_query($urlParams, '', '&', PHP_QUERY_RFC3986);
     }
 
     /**
@@ -360,7 +360,7 @@ class OAuthService
             return $carry;
         }, []);
 
-        return empty($request) ? '' : http_build_query($params, null, '&', PHP_QUERY_RFC3986);
+        return empty($request) ? '' : http_build_query($params, '', '&', PHP_QUERY_RFC3986);
     }
 
     /**

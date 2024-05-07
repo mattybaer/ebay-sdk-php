@@ -12,7 +12,7 @@ namespace DTS\eBaySDK\Taxonomy\Services;
 
 class TaxonomyService extends \DTS\eBaySDK\Taxonomy\Services\TaxonomyBaseService
 {
-    const API_VERSION = 'v1_beta';
+    const API_VERSION = 'v1';
 
     /**
      * @property array $operations Associative array of operations provided by the service.
@@ -79,6 +79,17 @@ class TaxonomyService extends \DTS\eBaySDK\Taxonomy\Services\TaxonomyBaseService
                     'valid' => ['string'],
                     'required' => true
                 ],
+                'category_tree_id' => [
+                    'valid' => ['string'],
+                    'required' => true
+                ]
+            ]
+        ],
+        'GetCategoriesAspects' => [
+            'method' => 'GET',
+            'resource' => 'category_tree/{category_tree_id}/fetch_item_aspects',
+            'responseClass' => '\DTS\eBaySDK\Taxonomy\Types\GetCategoriesAspectRestResponse',
+            'params' => [
                 'category_tree_id' => [
                     'valid' => ['string'],
                     'required' => true
@@ -184,4 +195,22 @@ class TaxonomyService extends \DTS\eBaySDK\Taxonomy\Services\TaxonomyBaseService
     {
         return $this->callOperationAsync('GetItemAspectsForCategory', $request);
     }
+    
+    /**
+	 * @param \DTS\eBaySDK\Taxonomy\Types\GetCategoriesAspectsRestRequest $request
+	 * @return \DTS\eBaySDK\Taxonomy\Types\GetCategoriesAspectsRestResponse
+	 */
+	public function getCategoriesAspects(\DTS\eBaySDK\Taxonomy\Types\GetCategoriesAspectsRestRequest $request)
+	{
+		return $this->getCategoriesAspectsAsync($request)->wait();
+	}
+
+	/**
+	 * @param \DTS\eBaySDK\Taxonomy\Types\GetCategoriesAspectsRestRequest $request
+	 * @return \GuzzleHttp\Promise\PromiseInterface
+	 */
+	public function getCategoriesAspectsAsync(\DTS\eBaySDK\Taxonomy\Types\GetCategoriesAspectsRestRequest $request)
+	{
+		return $this->callOperationAsync('GetCategoriesAspects', $request);
+	}
 }

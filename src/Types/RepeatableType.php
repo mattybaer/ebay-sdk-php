@@ -3,6 +3,7 @@ namespace DTS\eBaySDK\Types;
 
 use \DTS\eBaySDK\Exceptions;
 use \DTS\eBaySDK\JmesPath\JmesPathableArrayInterface;
+use ReturnTypeWillChange;
 
 /**
  * Class to handle XML elements that are repeatable.
@@ -56,6 +57,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
      *
      * @return bool Returns if the offset exists in the array.
      */
+    #[ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->data[$offset]);
@@ -68,6 +70,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
      *
      * @return mixed Returns the value for the given offset or null if it doesn't exist.
      */
+    #[ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->offsetExists($offset) ? $this->data[$offset] : null;
@@ -81,6 +84,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
      *
      * @throws \DTS\eBaySDK\Exceptions\InvalidPropertyTypeException If the value is the wrong type for the array.
      */
+    #[ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         self::ensurePropertyType($value);
@@ -97,6 +101,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
      *
      * @param int $offset The array index.
      */
+    #[ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->data[$offset]);
@@ -105,6 +110,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
     /**
      * @return int The number of array items.
      */
+    #[ReturnTypeWillChange]
     public function count()
     {
         return count($this->data);
@@ -113,6 +119,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
     /**
      * @return mixed The value of the current array index.
      */
+    #[ReturnTypeWillChange]
     public function current()
     {
         return $this->offsetGet($this->position);
@@ -121,6 +128,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
     /**
      * @return int The current array index.
      */
+    #[ReturnTypeWillChange]
     public function key()
     {
         return $this->position;
@@ -129,6 +137,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
     /**
      * Move onto the next array index.
      */
+    #[ReturnTypeWillChange]
     public function next()
     {
         $this->position++;
@@ -137,6 +146,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
     /**
      * Reset the array index to the start of the array.
      */
+    #[ReturnTypeWillChange]
     public function rewind()
     {
         $this->position = 0;
@@ -145,6 +155,7 @@ class RepeatableType implements \ArrayAccess, \Countable, \Iterator, JmesPathabl
     /**
      * @return bool Return if the current array index is valid.
      */
+    #[ReturnTypeWillChange]
     public function valid()
     {
         return $this->offsetExists($this->position);
